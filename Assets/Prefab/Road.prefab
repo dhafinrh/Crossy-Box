@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2748476473850581141}
   - component: {fileID: 2748476473850581140}
+  - component: {fileID: 5527542081372536871}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -46,5 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 1129987648171489067, guid: 9c2544aba19be7349a57bca964ade097, type: 3}
   carPrefab: {fileID: 6562214341803575038, guid: 0083c5cd35978684393e67c97ab55bb6, type: 3}
-  minInterval: 1
-  maxInterval: 3
+  minInterval: 3
+  maxInterval: 7
+  spawnProbability: 0.1
+--- !u!65 &5527542081372536871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748476473850581139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

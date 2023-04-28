@@ -12,6 +12,7 @@ public class Grass : Terrain
         base.Generate(size);
         var limit = Mathf.FloorToInt((float)size / 2);
         var treeCount = Mathf.FloorToInt((float)size * treeProbability);
+        
         List<int> emptyPosition = new List<int>();
 
         // buat daftar posisi kosong

@@ -20,7 +20,7 @@ public class CarMovement : MonoBehaviour
     }
     private void Update()
     {
-        speed = Random.Range(5, 10);
+        speed = Random.Range(3, 5);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         if (Vector3.Distance(initialPosition, this.transform.position) > this.disctanceLimit)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Road : Terrain
@@ -7,6 +5,8 @@ public class Road : Terrain
     [SerializeField] CarMovement carPrefab;
     [SerializeField] float minInterval;
     [SerializeField] float maxInterval;
+    [SerializeField, Range(0, 1)] float spawnProbability;
+
 
     float timer;
     Vector3 carSpawnPosition;
@@ -30,7 +30,7 @@ public class Road : Terrain
 
     private void Update()
     {
-        if (timer <= 0)
+        if (timer <= 0 && Random.value < spawnProbability) // check if a car should be spawned based on the spawn probability
         {
             timer = Random.Range(minInterval, maxInterval);
 

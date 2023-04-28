@@ -14,6 +14,6 @@ public class PlayerCamera : MonoBehaviour
     public void UpdatePosition(Vector3 targetPost)
     {
         DOTween.Kill(this.transform);
-        transform.DOMoveZ(offset.z + targetPost.z, moveDuration);
+        transform.DOMove(offset + targetPost, moveDuration);
     }
 }

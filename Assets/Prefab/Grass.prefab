@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822499172768048464}
   - component: {fileID: 1822499172768048465}
+  - component: {fileID: 8595121423663997998}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -49,4 +50,17 @@ MonoBehaviour:
   - {fileID: 1360672120420301136, guid: 54a5d81ed406ec24c92b37c871a774fc, type: 3}
   - {fileID: 1360672120420301136, guid: edec4d99448c8b245a9fa05c9ecad845, type: 3}
   - {fileID: 1360672120420301136, guid: 7a3f2f60a4f954a42b45b57666e4c255, type: 3}
-  treeProbability: 0
+  treeProbability: 0.1
+--- !u!65 &8595121423663997998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822499172768048470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
