@@ -14,11 +14,12 @@ public class Movement : MonoBehaviour
 
     public UnityEvent<Vector3> onJumped;
     public UnityEvent<int> onGetCoin;
-    private bool isDie = false;
+    public UnityEvent onDie;
+    private bool isMoveable = false;
 
     void Update()
     {
-        if (isDie == true)
+        if (isMoveable == true)
             return;
         else
 
@@ -90,8 +91,14 @@ public class Movement : MonoBehaviour
         // seq.Append(transform.DOMoveZ(0, moveDuration * 0.5f));
     }
 
+    public void SetMoveAble(bool value)
+    {
+        isMoveable = value;
+    }
+
     public void UpdateMoveLimit(int horizontalLimit, int backLimit)
     {
+        Debug.Log("Update Move Limit");
         leftMoveLimit = -horizontalLimit / 2;
         rightMoveLimit = horizontalLimit / 2;
         backMoveLimit = backLimit;
@@ -107,12 +114,13 @@ public class Movement : MonoBehaviour
         if (other.CompareTag("Car"))
         {
 
-            if (isDie == true)
+            if (isMoveable == true)
                 return;
 
             transform.DOScaleY(0.1f, 0.2f);
 
-            isDie = true;
+            isMoveable = true;
+            Invoke("Die", 3);
         }
         else if (other.CompareTag("Coin"))
         {
@@ -120,5 +128,20 @@ public class Movement : MonoBehaviour
             onGetCoin.Invoke(coin.Value);
             coin.Collected();
         }
+
+        else if (other.CompareTag("Eagle"))
+        {
+            if (this.transform != other.transform)
+            {
+
+                this.transform.SetParent(other.transform);
+                Invoke("Die", 3);
+            }
+        }
+    }
+
+    private void Die()
+    {
+        onDie.Invoke();
     }
 }

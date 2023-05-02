@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class CarMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float speed = 0;
     Vector3 initialPosition;
     float disctanceLimit;
 
@@ -20,7 +20,6 @@ public class CarMovement : MonoBehaviour
     }
     private void Update()
     {
-        speed = Random.Range(3, 5);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         if (Vector3.Distance(initialPosition, this.transform.position) > this.disctanceLimit)

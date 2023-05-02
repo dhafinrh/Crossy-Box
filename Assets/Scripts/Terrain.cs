@@ -41,19 +41,19 @@ public class Terrain : MonoBehaviour
         for (int x = -limit - extraTiles; x < -limit - 1; x++)
         {
             var tile = SpawnTile(x);
-            //DarkenObject(tile);
+            DarkenObject(tile);
         }
         for (int x = limit + 2; x <= limit + extraTiles; x++)
         {
             var tile = SpawnTile(x);
-            
-            //DarkenObject(tile);
+
+            DarkenObject(tile);
         }
 
         var leftBoundaryTile = SpawnTile(-limit - 1);
         var rightBoundaryTile = SpawnTile(limit + 1);
-        // DarkenObject(leftBoundaryTile);
-        // DarkenObject(rightBoundaryTile);
+        DarkenObject(leftBoundaryTile);
+        DarkenObject(rightBoundaryTile);
 
     }
 

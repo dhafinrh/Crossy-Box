@@ -7,7 +7,6 @@ public class Road : Terrain
     [SerializeField] float maxInterval;
     [SerializeField, Range(0, 1)] float spawnProbability;
 
-
     float timer;
     Vector3 carSpawnPosition;
     Quaternion carRotation;
@@ -30,7 +29,8 @@ public class Road : Terrain
 
     private void Update()
     {
-        if (timer <= 0 && Random.value < spawnProbability) // check if a car should be spawned based on the spawn probability
+        float value = Random.value;
+        if (timer <= 0 && value < spawnProbability) // check if a car should be spawned based on the spawn probability
         {
             timer = Random.Range(minInterval, maxInterval);
 

@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 1129987648171489067, guid: 9c2544aba19be7349a57bca964ade097, type: 3}
   carPrefab: {fileID: 6562214341803575038, guid: 0083c5cd35978684393e67c97ab55bb6, type: 3}
-  minInterval: 3
-  maxInterval: 7
-  spawnProbability: 0.1
+  minInterval: 4
+  maxInterval: 8
+  spawnProbability: 0.007
 --- !u!65 &5527542081372536871
 BoxCollider:
   m_ObjectHideFlags: 0

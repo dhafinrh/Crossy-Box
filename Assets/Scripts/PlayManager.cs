@@ -17,9 +17,12 @@ public class PlayManager : MonoBehaviour
     [SerializeField] private int coin;
     public UnityEvent<int, int> OnUpdateTerrainLimit;
     public UnityEvent<int> OnScoreUpdate;
+    public UnityEvent OnResetTimer;
+
 
     private void Start()
     {
+        //Create initial Grass
         for (int zPos = backViewDistance; zPos < initialGrassCount; zPos++)
         {
             var terrain = Instantiate(terrainList[0]);
@@ -32,12 +35,9 @@ public class PlayManager : MonoBehaviour
             activeTerrainDict[zPos] = terrain;
         }
 
-        //
         for (int zPos = initialGrassCount; zPos < forwardViewDistance; zPos++)
         {
             SpawnRandomTerrain(zPos);
-            // terrain.Generate(horizontalSize);
-            // activeTerrainDict[zPos] = terrain;
         }
         OnUpdateTerrainLimit.Invoke(horizontalSize, travelDistance + backViewDistance);
     }
@@ -78,6 +78,7 @@ public class PlayManager : MonoBehaviour
         }
 
         randomIndex = Random.Range(0, candicateTerrain.Count);
+        OnResetTimer.Invoke();
         return SpawnTerrain(candicateTerrain[randomIndex], zPos);
     }
 
@@ -87,11 +88,11 @@ public class PlayManager : MonoBehaviour
         terrain.transform.position = new Vector3(0, 0, zPos);
         terrain.Generate(horizontalSize);
         activeTerrainDict[zPos] = terrain;
-        SpawnCoin(horizontalSize, zPos, 1);
+        SpawnCoin(horizontalSize, zPos, 0.2f);
         return terrain;
     }
 
-    public Coin SpawnCoin(int horizontalSize, int zPos, float coinProbability = 1)
+    public Coin SpawnCoin(int horizontalSize, int zPos, float coinProbability = 0.2f)
     {
         List<Vector3> spawnCandidateList = new List<Vector3>();
         for (int i = -horizontalSize / 2; i <= horizontalSize / 2; i++)

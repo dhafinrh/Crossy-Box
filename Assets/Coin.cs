@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
 
         this.transform.DOLocalJump(
             this.transform.position,
-            1,
+            2,
             1,
             0.5f
         ).onComplete = SelfDestruct;

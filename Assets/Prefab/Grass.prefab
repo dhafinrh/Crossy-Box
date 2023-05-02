@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 1360672120420301136, guid: 54a5d81ed406ec24c92b37c871a774fc, type: 3}
   - {fileID: 1360672120420301136, guid: edec4d99448c8b245a9fa05c9ecad845, type: 3}
   - {fileID: 1360672120420301136, guid: 7a3f2f60a4f954a42b45b57666e4c255, type: 3}
-  treeProbability: 0.1
+  treeProbability: 0.2
 --- !u!65 &8595121423663997998
 BoxCollider:
   m_ObjectHideFlags: 0
