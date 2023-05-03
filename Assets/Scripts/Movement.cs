@@ -132,12 +132,12 @@ public class Movement : MonoBehaviour
             if (this.transform != other.transform)
             {
                 this.transform.SetParent(other.transform);
-                Invoke("Die", 3);
+                Invoke("GameOverPanel", 3);
             }
         }
     }
 
-    private void Die()
+    private void GameOverPanel()
     {
         onDie.Invoke();
     }
