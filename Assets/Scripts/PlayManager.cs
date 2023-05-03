@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class PlayManager : MonoBehaviour
 {
-    [SerializeField] Movement bison;
     [SerializeField] List<Terrain> terrainList;
     [SerializeField] List<Coin> coinList;
     [SerializeField] int initialGrassCount = 5;

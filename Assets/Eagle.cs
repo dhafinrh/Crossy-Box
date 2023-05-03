@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Eagle : MonoBehaviour
 {
-    [SerializeField, Range(0, 10)] float speed;
+    [SerializeField, Range(0, 20)] float speed;
 
     private void Update()
     {

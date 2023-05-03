@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (isMoveable == true)
+        if (isMoveable != true)
             return;
         else
 
@@ -98,7 +98,6 @@ public class Movement : MonoBehaviour
 
     public void UpdateMoveLimit(int horizontalLimit, int backLimit)
     {
-        Debug.Log("Update Move Limit");
         leftMoveLimit = -horizontalLimit / 2;
         rightMoveLimit = horizontalLimit / 2;
         backMoveLimit = backLimit;
@@ -113,13 +112,12 @@ public class Movement : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-
-            if (isMoveable == true)
+            if (transform.localScale.y == 0.1f)
                 return;
 
-            transform.DOScaleY(0.1f, 0.2f);
+            transform.DOScale(new Vector3(0.5f, 0.05f, 0.28f), 0.1f);
 
-            isMoveable = true;
+            isMoveable = false;
             Invoke("Die", 3);
         }
         else if (other.CompareTag("Coin"))
@@ -133,7 +131,6 @@ public class Movement : MonoBehaviour
         {
             if (this.transform != other.transform)
             {
-
                 this.transform.SetParent(other.transform);
                 Invoke("Die", 3);
             }

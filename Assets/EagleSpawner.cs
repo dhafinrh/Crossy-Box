@@ -23,12 +23,10 @@ public class EagleSpawner : MonoBehaviour
             bison.SetMoveAble(false);
         }
         timer -= Time.deltaTime;
-        Debug.Log("SISA WAKTU : " + timer);
     }
 
     public void ResetTimer()
     {
-        Debug.Log("RESET");
         timer = initialTimer;
     }
 }
