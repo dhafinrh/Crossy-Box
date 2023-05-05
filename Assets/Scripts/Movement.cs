@@ -118,7 +118,7 @@ public class Movement : MonoBehaviour
             transform.DOScale(new Vector3(0.5f, 0.05f, 0.28f), 0.1f);
 
             isMoveable = false;
-            Invoke("Die", 3);
+            Invoke("GameOverPanel", 3);
         }
         else if (other.CompareTag("Coin"))
         {
