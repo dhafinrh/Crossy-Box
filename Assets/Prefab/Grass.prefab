@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 5574341210431654286, guid: 9e2565ff6d5b77443b49dae21ba36292, type: 3}
   treePrefabList:
-  - {fileID: 1360672120420301136, guid: edec4d99448c8b245a9fa05c9ecad845, type: 3}
-  - {fileID: 1360672120420301136, guid: 7a3f2f60a4f954a42b45b57666e4c255, type: 3}
-  - {fileID: 1360672120420301136, guid: 54a5d81ed406ec24c92b37c871a774fc, type: 3}
+  - {fileID: 4491307312167800401, guid: 6ad0316c8817d3c48bfb3bbee53adab4, type: 3}
+  - {fileID: 4491307312167800401, guid: e3a1d3d7718535e4c87ed4c19c19c57a, type: 3}
+  - {fileID: 4491307312167800401, guid: 27889f0b06eaa4b48a846348f03fabf8, type: 3}
   treeProbability: 0.2
 --- !u!65 &8595121423663997998
 BoxCollider:

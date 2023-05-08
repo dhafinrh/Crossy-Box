@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
 
     public UnityEvent<Vector3> onJumped;
     public UnityEvent<int> onGetCoin;
+    public UnityEvent onCarHit;
     public UnityEvent onDie;
     private bool isMoveable = false;
 
@@ -118,7 +119,8 @@ public class Movement : MonoBehaviour
             transform.DOScale(new Vector3(0.5f, 0.05f, 0.28f), 0.1f);
 
             isMoveable = false;
-            Invoke("GameOverPanel", 3);
+            onCarHit.Invoke();
+            Invoke("GameOverPanel", 1);
         }
         else if (other.CompareTag("Coin"))
         {

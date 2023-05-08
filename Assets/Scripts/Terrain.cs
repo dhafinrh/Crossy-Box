@@ -5,7 +5,7 @@ using UnityEngine;
 public class Terrain : MonoBehaviour
 {
     [SerializeField] GameObject tilePrefab;
-    private int extraTiles = 6; // number of additional tiles to spawn on each side;
+    private int extraTiles = 10; // number of additional tiles to spawn on each side;
     protected int horizontalSize;
 
     public virtual void Generate(int size)

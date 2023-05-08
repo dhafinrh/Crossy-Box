@@ -18,7 +18,6 @@ public class PlayManager : MonoBehaviour
     public UnityEvent<int> OnScoreUpdate;
     public UnityEvent OnResetTimer;
 
-
     private void Start()
     {
         //Create initial Grass
@@ -43,6 +42,7 @@ public class PlayManager : MonoBehaviour
 
     private Terrain SpawnRandomTerrain(int zPos)
     {
+        OnResetTimer.Invoke();
         Terrain comparatorTerrain = null;
         int randomIndex;
 
@@ -77,7 +77,6 @@ public class PlayManager : MonoBehaviour
         }
 
         randomIndex = Random.Range(0, candicateTerrain.Count);
-        OnResetTimer.Invoke();
         return SpawnTerrain(candicateTerrain[randomIndex], zPos);
     }
 
