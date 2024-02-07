@@ -61,6 +61,7 @@ public class ScoreText : MonoBehaviour
     {
         stopWatchActive = true;
     }
+    
     public void StopStopwatch()
     {
         if (stopWatchActive == true)
